@@ -1,0 +1,11 @@
+test_dz_rc.doctest - tests for Algerian RC numbers
+
+>>> from stdnum.dz import rc
+>>> rc.validate('12A3456789')
+'12A3456789'
+>>> rc.validate('99A9999999')
+'99A9999999'
+>>> rc.is_valid('1234567890')
+False
+>>> rc.is_valid('12A345678X')
+False

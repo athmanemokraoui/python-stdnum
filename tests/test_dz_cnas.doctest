@@ -1,0 +1,15 @@
+test_dz_cnas.doctest - tests for CNAS employer numbers
+
+>>> from stdnum.dz import cnas
+>>> cnas.validate('123456789012')
+'123456789012'
+>>> cnas.is_valid('12345678901')
+False
+>>> cnas.is_valid('12345678901X')
+False
+>>> cnas.is_valid('123456789012')
+True
+>>> cnas.is_valid('1234567890123')
+False
+>>> cnas.is_valid('12345678901X')
+False

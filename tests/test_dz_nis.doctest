@@ -1,0 +1,11 @@
+test_dz_nis.doctest - tests for Algerian NIS numbers
+
+>>> from stdnum.dz import nis
+>>> nis.validate('545154845112202')
+'545154845112202'
+>>> nis.validate('545154845112202001')
+'545154845112202001'
+>>> nis.is_valid('123')
+False
+>>> nis.is_valid('12345678901234X')
+False

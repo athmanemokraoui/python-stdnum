@@ -1,0 +1,15 @@
+test_dz_casnos.doctest - tests for CASNOS social security numbers
+
+>>> from stdnum.dz import casnos
+>>> casnos.validate('123456789012')
+'123456789012'
+>>> casnos.is_valid('123456789012')
+True
+>>> casnos.is_valid('12345678901')
+False
+>>> casnos.is_valid('1234567890123')
+False
+>>> casnos.is_valid('12345678901A')
+False
+>>> casnos.format('123 456 789 012')
+'123456789012'

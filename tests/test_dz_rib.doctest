@@ -1,0 +1,19 @@
+test_dz_rib.doctest - tests for Algerian RIB numbers
+
+>>> from stdnum.dz import rib
+>>> rib.validate('00100325030000134050')
+'00100325030000134050'
+>>> rib.is_valid('00100325030000134050')
+True
+>>> rib.is_valid('00100325030000134051')
+False
+>>> rib.is_valid('00100325030000134000')
+False
+>>> rib.is_valid('short')
+False
+>>> rib._check_key('00100325030000134050')
+50
+>>> rib.is_valid('00100325030000134050')
+True
+>>> rib.is_valid('00100325030000134051')
+False

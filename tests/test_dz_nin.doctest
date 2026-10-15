@@ -1,0 +1,50 @@
+test_dz_nin.doctest - detailed doctests for stdnum.dz.nin
+
+Copyright (C) 2026
+
+This file contains detailed tests for the structural validation of
+Algerian NIN numbers.
+
+>>> from stdnum.dz import nin
+
+Valid structural examples. These examples test formatting and length,
+not the issuance or authenticity of real identity numbers.
+
+>>> nin.validate('123456789012345678')
+'123456789012345678'
+>>> nin.validate('123 456 789 012 345 678')
+'123456789012345678'
+>>> nin.validate('000000000000000000')
+'000000000000000000'
+
+Invalid length.
+
+>>> nin.validate('12345678901234567')
+Traceback (most recent call last):
+    ...
+InvalidLength: ...
+>>> nin.validate('1234567890123456789')
+Traceback (most recent call last):
+    ...
+InvalidLength: ...
+
+Invalid characters.
+
+>>> nin.validate('X23456789012345678')
+Traceback (most recent call last):
+    ...
+InvalidFormat: ...
+
+Validity checks.
+
+>>> nin.is_valid('123456789012345678')
+True
+>>> nin.is_valid('123')
+False
+>>> nin.is_valid('X23456789012345678')
+False
+
+Formatting.
+
+>>> nin.format('123 456 789 012 345 678')
+'123456789012345678'
